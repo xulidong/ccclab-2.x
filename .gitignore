@@ -1,0 +1,6 @@
+library
+local
+build
+temp
+.DS_Store
+*.ts
