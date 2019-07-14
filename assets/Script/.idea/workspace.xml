@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bb5ae63-e2f0-4143-a74d-a2f5ba3902db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Script.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../resources/cocoa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../resources/singleColor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../jsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../project.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../settings/builder.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../settings/builder.panel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../settings/project.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../settings/services.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../template-banner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../template.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scene/SceneDfsBattle.fire" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scene/SceneDfsMain.fire" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scene/SceneDfsStart.fire" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DfsGame.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DfsGameLoop.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SceneDfsBattle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SceneDfsMain.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SceneDfsStart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SceneDfsState.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
