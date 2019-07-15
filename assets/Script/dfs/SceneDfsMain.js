@@ -1,5 +1,5 @@
 // 塔防游戏主场景
-const SceneDfsState = require("SceneDfsState");
+const DfsSceneState = require("DfsSceneState");
 
 
 cc.Class({
@@ -7,7 +7,7 @@ cc.Class({
 
     onClickBattle() {
         let ctrler = game.m_ctrler;
-        let st = new SceneDfsState.SceneStateBattle();
+        let st = new DfsSceneState.SceneStateBattle();
         st.init(ctrler);
         ctrler.setState(st, "SceneDfsBattle");
     },

@@ -17,7 +17,7 @@
  * 行为模式
  */
 
-const SceneDfsState = require("SceneDfsState");
+const DfsSceneState = require("DfsSceneState");
 
 cc.Class({
     extends: cc.Component,
@@ -26,7 +26,7 @@ cc.Class({
     },
 
     onLoad () {
-        this.m_ctrler = new SceneDfsState.SceneStateCtrler();
+        this.m_ctrler = new DfsSceneState.SceneStateCtrler();
 
         window.game = this;
         cc.game.addPersistRootNode(this.node);
@@ -34,7 +34,7 @@ cc.Class({
 
     start () {
         // 初始场景已加载，只需要要切换设置状态即可
-        let st = new SceneDfsState.SceneStateStart();
+        let st = new DfsSceneState.SceneStateStart();
         st.init(this.m_ctrler);
         this.m_ctrler.setState(st, "");
     },
