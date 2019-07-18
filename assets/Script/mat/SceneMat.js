@@ -16,7 +16,7 @@ cc.Class({
     onClick() {
         this.isGray = !this.isGray;
         let shaderName = this.isGray ? "matGray" : "2d-sprite";
-        MatUtils.useShader(this.spCocoa, shaderName, {buildIn: !this.isGray}, (err, mat) => {
+        MatUtils.useMaterial(this.spCocoa, shaderName, {buildIn: !this.isGray}, (err, mat) => {
             if (err) {
                 return;
             }

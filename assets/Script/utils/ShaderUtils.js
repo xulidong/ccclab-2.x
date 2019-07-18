@@ -5,6 +5,13 @@ let MatUtils = {
     customCache: {}, // 保存自定义材质
 };
 
+MatUtils.createMaterial = function() {
+    let mat = new cc.Material();
+
+    return mat;
+},
+
+
 MatUtils.getMaterial = function(sp, name, isBuildIn, cb) {
     if (isBuildIn) {
         let mat = cc.Material.getInstantiatedBuiltinMaterial(name, sp);
@@ -27,11 +34,11 @@ MatUtils.getMaterial = function(sp, name, isBuildIn, cb) {
     }
 };
 
-MatUtils.useShader = function(sp, shaderName, args, cb) {
-    MatUtils.getMaterial(sp, shaderName, args.buildIn, (err, mat)=>{
+MatUtils.useMaterial = function(sp, name, args, cb) {
+    MatUtils.getMaterial(sp, name, args.buildIn, (err, mat)=>{
         if (err) {
             cb(err, null);
-        };
+        }
         mat.setProperty('texture', sp.spriteFrame.getTexture());
         sp.setMaterial(0, mat);
         sp.markForRender(true);
