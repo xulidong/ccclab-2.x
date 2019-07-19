@@ -5,13 +5,13 @@
 const DfsGame = require("DfsGame");
 
 
- // 状态基类
+// 状态基类
 let ISceneState = cc.Class({
     name: "ISceneState",
 
     ctor() {
-       this.m_stName = "ISceneState";
-       this.m_ctrler = null;
+        this.m_stName = "ISceneState";
+        this.m_ctrler = null;
     },
 
     init(ctrler) {
@@ -37,11 +37,11 @@ let SceneStateStart = cc.Class({
     extends: ISceneState,
 
     ctor() {
-       this.m_stName = "SceneStateStart";
+        this.m_stName = "SceneStateStart";
     },
 
     update() {
-        if (!this.m_ctrler){
+        if (!this.m_ctrler) {
             return;
         }
         // 加载完成后，自动切换到主场景
@@ -80,10 +80,10 @@ let SceneStateBattle = cc.Class({
     },
 
     update() {
-        if (!this.m_ctrler){
+        if (!this.m_ctrler) {
             return;
         }
-        
+
         DfsGame.instance().update();
 
         if (DfsGame.instance().isGameOver()) {
@@ -119,7 +119,7 @@ let SceneStateCtrler = cc.Class({
     loadScene(sceneName) {
         if (sceneName) {
             this.m_bLoading = true;
-            cc.director.loadScene(sceneName, ()=>{
+            cc.director.loadScene(sceneName, () => {
                 this.m_bLoading = false;
             });
         }

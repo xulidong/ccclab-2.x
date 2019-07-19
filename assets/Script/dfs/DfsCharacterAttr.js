@@ -48,33 +48,33 @@ let ICharactorAttr = cc.Class({
         atk -= m_attrStrategy.getDescDmg();
         m_nowHp -= atk;
     },
- });
+});
 
 
- let ISoldierAttr = cc.Class({
-     extends: ICharactorAttr,
+let ISoldierAttr = cc.Class({
+    extends: ICharactorAttr,
 
-     ctor() {
+    ctor() {
         this.m_Lv = 0; // 等级
         this.m_lvHp = 0;// 升级增加的血量
-     },
+    },
 
-     getMaxHp() {
+    getMaxHp() {
         return this.m_lvHp + this.m_maxHp;
-     },
+    },
 
-     setLvHp(hp) {
+    setLvHp(hp) {
         this.m_lvHp = hp;
-     },
+    },
 
-     getLv() {
-         return this.m_Lv;
-     },
- });
+    getLv() {
+        return this.m_Lv;
+    },
+});
 
 
- let IEnemyAttr = cc.Class({
-     extends: ICharactorAttr,
+let IEnemyAttr = cc.Class({
+    extends: ICharactorAttr,
 
     ctor() {
         this.m_critRate = 0.0; // 暴击率

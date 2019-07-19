@@ -1,9 +1,9 @@
 /**
  * 角色
- * 
+ *
  * 角色和武器 - 桥接模式
  * 将抽象与现实分离，使二者可以独立变化
- * 
+ *
  */
 
 let ICharactor = cc.Class({
@@ -83,16 +83,16 @@ let ICharactor = cc.Class({
     update() {
         this.updateAI();
     },
- });
+});
 
 
- let ISoldier = cc.Class({
-     extends: ICharactor,
- });
+let ISoldier = cc.Class({
+    extends: ICharactor,
+});
 
 
- let IEnemy = cc.Class({
-     extends: ICharactor,
+let IEnemy = cc.Class({
+    extends: ICharactor,
 });
 
 module.exports.ISoldier = ISoldier;

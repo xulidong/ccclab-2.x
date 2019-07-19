@@ -1,8 +1,7 @@
 cc.Class({
     extends: cc.Component,
 
-    properties: {
-    },
+    properties: {},
 
     onClickScene(event, customData) {
         cc.director.loadScene(customData);
