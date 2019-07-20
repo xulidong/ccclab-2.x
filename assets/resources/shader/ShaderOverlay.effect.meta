@@ -1,0 +1,11 @@
+{
+  "ver": "1.0.15",
+  "uuid": "855588e9-c037-45d7-8305-78b911fa9b04",
+  "compiledShaders": [
+    {
+      "vert": "\n#define _IS_VERT_SHADER 1\n\nprecision highp float;\n\nuniform mat4 cc_matViewProj;\n\n#if _USE_MODEL\n  uniform mat4 cc_matWorld;\n#endif\n\nattribute vec3 a_position;\nattribute lowp vec4 a_color;\n\n#if USE_TEXTURE\n  attribute mediump vec2 a_uv0;\n  varying mediump vec2 v_uv0;\n#endif\n\nvarying lowp vec4 v_color;\n\nvoid main () {\n  mat4 mvp;\n  \n  #if _USE_MODEL\n    mvp = cc_matViewProj * cc_matWorld;\n  #else\n    mvp = cc_matViewProj;\n  #endif\n\n  #if USE_TEXTURE\n    v_uv0 = a_uv0;\n  #endif\n\n  v_color = a_color;\n\n  gl_Position = mvp * vec4(a_position, 1);\n}\n\n\n",
+      "frag": "\n#define _IS_FRAG_SHADER 1\n\nprecision highp float;\n\n#if USE_TEXTURE\n  uniform sampler2D texture;\n  varying mediump vec2 v_uv0;\n#endif\n\n#if USE_ALPHA_TEST\n  uniform float alphaThreshold;\n#endif\n\nvoid ALPHA_TEST (in vec4 color) {\n  #if USE_ALPHA_TEST\n      if (color.a < alphaThreshold) discard;\n  #endif\n}\n\nvoid ALPHA_TEST (in float alpha) {\n  #if USE_ALPHA_TEST\n      if (alpha < alphaThreshold) discard;\n  #endif\n}\n\nvarying lowp vec4 v_color;\n\nfloat format(float x, float y) {\n  if (x <= 0.5) {\n    return 2.0 * x * y;\n  } else {\n    return 1.0 - 2.0 * (1.0 - x) * (1.0 - y);\n  }\n}\n\nvoid main () {\n  vec4 color = v_color;\n\n  #if USE_TEXTURE\n    vec4 tc = texture2D(texture, v_uv0);\n    #if _USE_ETC1_TEXTURE\n      tc.a *= texture2D(texture, v_uv0 + vec2(0, 0.5)).r;\n    #endif\n    vec4 mc = color;\n    mc.r = format(tc.r, v_color.r);\n    mc.g = format(tc.g, v_color.g);\n    mc.b = format(tc.b, v_color.b);\n    color = mc;\n  #endif\n\n  ALPHA_TEST(color);\n\n  gl_FragColor = color;\n}\n\n\n"
+    }
+  ],
+  "subMetas": {}
+}

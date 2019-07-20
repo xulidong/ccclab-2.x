@@ -1159,7 +1159,7 @@
     "component": "",
     "_componentId": "9af1cNNf9tMGY+V04YDHTSY",
     "handler": "onClickScene",
-    "customEventData": "SceneMat"
+    "customEventData": "SceneMaterial"
   },
   {
     "__type__": "cc.Layout",
