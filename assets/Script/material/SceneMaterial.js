@@ -1,4 +1,4 @@
-let MaterialUtils = require("MaterialUtils");
+const MaterialUtils = require("MaterialUtils");
 
 cc.Class({
     extends: cc.Component,
