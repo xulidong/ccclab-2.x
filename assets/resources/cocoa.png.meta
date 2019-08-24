@@ -9,8 +9,8 @@
     "android": {
       "formats": [
         {
-          "name": "etc1",
-          "quality": "fast"
+          "name": "webp",
+          "quality": 80
         }
       ]
     },
