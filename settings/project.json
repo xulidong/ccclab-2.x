@@ -5,8 +5,8 @@
       true
     ]
   ],
-  "design-resolution-height": 640,
-  "design-resolution-width": 960,
+  "design-resolution-height": 720,
+  "design-resolution-width": 1280,
   "excluded-modules": [
     "Geom Utils",
     "3D",
@@ -27,7 +27,7 @@
   "group-list": [
     "default"
   ],
-  "last-module-event-record-time": 1563506499552,
+  "last-module-event-record-time": 1566356342229,
   "simulator-orientation": false,
   "simulator-resolution": {
     "height": 640,
