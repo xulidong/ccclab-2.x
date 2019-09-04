@@ -1,0 +1,11 @@
+{
+  "ver": "1.0.15",
+  "uuid": "5c45cb74-c890-4ae3-b43d-fff47f2b9f33",
+  "compiledShaders": [
+    {
+      "vert": "\n#define _IS_VERT_SHADER 1\n\n  precision highp float;\n  \n  uniform mat4 cc_matViewProj;\n  attribute vec3 a_position;\n  \n  attribute vec2 a_uv0;\n  varying vec2 v_uv0;\n  \n  attribute lowp vec4 a_color;\n  varying lowp vec4 v_color;\n  void main () {\n  \tvec4 pos = cc_matViewProj * vec4(a_position, 1);\n  \tv_uv0 = a_uv0;\n    v_color = a_color;\n  \tgl_Position = pos;\n  }\n\n\n",
+      "frag": "\n#define _IS_FRAG_SHADER 1\n\n  precision highp float;\n  \n  uniform sampler2D texture;\n  varying vec2 v_uv0;\n  varying vec4 v_color;\n  \n  uniform float angle;\n  uniform float offset;\n  uniform float uvRatio;\n  uniform lowp vec4 beginColor;\n  uniform lowp vec4 endColor;\n  void main () {\n\t  \n  \tvec4 color = v_color*texture2D(texture, v_uv0);\n  \tfloat angleInRadians = radians(angle); \n  \tfloat ratio = clamp((v_uv0.y * cos(angleInRadians) + v_uv0.x * sin(angleInRadians) + offset) * uvRatio, 0.0, 1.0);\n\tfloat beginRatio = 1.0 - ratio;\n  \tfloat endRatio = ratio;\n  \n  \tgl_FragColor = vec4(\n  \t\tcolor.r * (beginColor.r * beginRatio + endColor.r * endRatio),\n  \t\tcolor.g * (beginColor.g * beginRatio + endColor.g * endRatio),\n  \t\tcolor.b * (beginColor.b * beginRatio + endColor.b * endRatio),\n  \t\tcolor.a * (beginColor.a * beginRatio + endColor.a * endRatio)\n  \t);\n  }\n\n\n"
+    }
+  ],
+  "subMetas": {}
+}

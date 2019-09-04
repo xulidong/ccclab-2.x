@@ -1,0 +1,13 @@
+{
+  "__type__": "cc.Material",
+  "_name": "",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "5c45cb74-c890-4ae3-b43d-fff47f2b9f33"
+  },
+  "_defines": {},
+  "_props": {
+    "angle": 90
+  }
+}

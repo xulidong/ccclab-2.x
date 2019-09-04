@@ -9,20 +9,20 @@ cc.Class({
 
     onLoad() {
         this.materialList = [MaterialUtils.MAT.DEFAULT, MaterialUtils.MAT.GRAY, 
-            MaterialUtils.MAT.TIME, MaterialUtils.MAT.OVERLAY];
+            MaterialUtils.MAT.TIME, MaterialUtils.MAT.OVERLAY, MaterialUtils.MAT.GRADIENTS];
         this.setIndex = 0;
         this.mat = null;
         this.time = 0;
     },
 
     onClick() {
-        this.setIndex += 1;
-        let index = this.setIndex % this.materialList.length;
+        let index = (this.setIndex + 1) % this.materialList.length;
         MaterialUtils.useMaterial(this.spCocoa, this.materialList[index], (err, mat) => {
             if (err) {
                 return;
             }
             this.mat = mat;
+            this.setIndex = index;
         });
     },
 

@@ -14,7 +14,6 @@ let MaterialUtils = {
             name: "2d-gray-sprite"
         },
 
-        // custom TODO(自定义shader暂时未实现，预计打Android包时实现)
         TIME: {
             custom: true,
             name: "MaterialTime",
@@ -23,13 +22,9 @@ let MaterialUtils = {
             custom: true,
             name: "MaterialOverlay",
         },
-        ETC1: {
+        GRADIENTS: {
             custom: true,
-            name: "MaterialEtc1",
-        },
-        ETC1_OVERLAY: {
-            custom: true,
-            name: "MaterialEtc1Overlay",
+            name: "MaterialGradients",
         },
     },
 };
